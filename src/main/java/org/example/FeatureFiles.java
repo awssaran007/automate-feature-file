@@ -14,15 +14,15 @@ public class FeatureFiles {
     String name;
 
 
-    public String getRequest() {
+    public Request getRequest() {
         return request;
     }
 
-    public void setRequest(String request) {
+    public void setRequest(Request request) {
         this.request = request;
     }
 
-    String request;
+    Request request;
 
 
 }
