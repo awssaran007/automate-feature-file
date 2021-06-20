@@ -1,11 +1,97 @@
-[
-   {
-      "name":"XmediaOX",
-      "request":"hello"         
-      },
-   {
-      "name":"XmediaOX",
-      "request":"hello"         
+[	{
+   "name": "XmediaOX",
+   "request": {
+      "method": "GET",
+      "header": [
+         {
+            "key": "Accept",
+            "value": "application/json"
+         },
+         {
+            "key": "PREAUTH_USER_ID",
+            "value": "331079957"
+         },
+         {
+            "key": "Content-Type",
+            "value": "application/json"
+         }
+      ],
+      "url": {
+         "raw": "http://prv.aos.PRSMQA2.dds.net/prisma-masterdata-service/internal/xmedia/media?agencyMediaoceanId=35-1-6MSH-7B&systemCode=P",
+         "protocol": "http",
+         "host": [
+            "prv",
+            "aos",
+            "PRSMQA2",
+            "dds",
+            "net"
+         ],
+         "path": [
+            "prisma-masterdata-service",
+            "internal",
+            "xmedia",
+            "media"
+         ],
+         "query": [
+            {
+               "key": "agencyMediaoceanId",
+               "value": "35-1-6MSH-7B"
+            },
+            {
+               "key": "systemCode",
+               "value": "P"
+            }
+         ]
       }
-   
-]
+   },
+   "response": []
+},
+   {
+      "name": "get media Copy",
+      "protocolProfileBehavior": {
+         "disabledSystemHeaders": {
+            "accept": true
+         }
+      },
+      "request": {
+         "method": "GET",
+         "header": [
+            {
+               "key": "Accept",
+               "value": "application/json",
+               "type": "text"
+            },
+            {
+               "key": "PREAUTH_USER_ID",
+               "value": "{{oxtest11@ipg.com}}",
+               "type": "text"
+            },
+            {
+               "key": "Content-Type",
+               "value": "application/json",
+               "type": "text"
+            }
+         ],
+         "url": {
+            "raw": "{{base}}/xmedia/media?agencyMediaoceanId={{IPG}}&systemCode=P",
+            "host": [
+               "{{base}}"
+            ],
+            "path": [
+               "xmedia",
+               "media"
+            ],
+            "query": [
+               {
+                  "key": "agencyMediaoceanId",
+                  "value": "{{IPG}}"
+               },
+               {
+                  "key": "systemCode",
+                  "value": "P"
+               }
+            ]
+         }
+      },
+      "response": []
+   }]
