@@ -1,5 +1,5 @@
 [	{
-   "name": "XmediaOX",
+   "name": "Validate get Xmedia for OX",
    "request": {
       "method": "GET",
       "header": [
@@ -47,7 +47,7 @@
    "response": []
 },
    {
-      "name": "get media Copy",
+      "name": "Validate get Xmedia for OX IPG",
       "protocolProfileBehavior": {
          "disabledSystemHeaders": {
             "accept": true
@@ -73,9 +73,9 @@
             }
          ],
          "url": {
-            "raw": "{{base}}/xmedia/media?agencyMediaoceanId={{IPG}}&systemCode=P",
+            "raw": "http://prv.aos.PRSMQA2.dds.net/prisma-masterdata-service/internal/xmedia/media?agencyMediaoceanId=35-1-6MSH-7B&systemCode=P",
             "host": [
-               "{{base}}"
+               "http://prv.aos.PRSMQA2.dds.net/prisma-masterdata-service/internal"
             ],
             "path": [
                "xmedia",
@@ -84,7 +84,7 @@
             "query": [
                {
                   "key": "agencyMediaoceanId",
-                  "value": "{{IPG}}"
+                  "value": "35-1-6MSH-7B"
                },
                {
                   "key": "systemCode",
