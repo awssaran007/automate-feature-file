@@ -46,22 +46,18 @@ public class App {
         System.out.println(a.readFile());
         final Reader reader = new StringReader(a.readFile());
         JsonReader jsonReader = new JsonReader(reader);
-
         FeatureFiles[] targetArray = new GsonBuilder().setLenient().create().fromJson(jsonReader, FeatureFiles[].class);
-        for(FeatureFiles s:targetArray){
 
-            System.out.println( "Request :" + s.getRequest().getMethod());
 
-            for(Header h:    s.getRequest().getHeader()){
+        for (FeatureFiles s : targetArray) {
 
-                System.out.println("Header:" + h.getKey() + " " + h.getValue());
-            }
+            for (Header h : s.getRequest().getHeader()) {
 
-            System.out.println("endpoint: " + s.getRequest().getUrl().getRaw());
-
-            for(Query q: s.getRequest().getUrl().getQuery()) {
-                System.out.println("Key: " + q.getKey());
-                System.out.println("Value: " + q.getValue());
+                if (h.getKey().equals("PREAUTH_USER_ID")) {
+                    String endpoint = s.getRequest().getUrl().getRaw();
+                    endpoint = endpoint.substring(0, endpoint.indexOf('?'));
+                    new WriteToFeatureFile(s.getName(), endpoint, h.getValue(), s.getRequest().getUrl().getQuery(), s.getRequest().getMethod());
+                }
             }
 
 
